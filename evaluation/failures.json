@@ -1,8 +1,8 @@
 [
   {
-    "id": "relevant_05",
+    "id": "relevant_08",
     "category": "relevant",
-    "user_input": "What is L2 regularization and how does it affect model weights?",
+    "user_input": "What is a confusion matrix and how do precision and recall relate to it?",
     "turns": [],
     "bot_reply": "REFUSE: irrelevant \u2014 I do not have enough relevant information in the document to answer that.",
     "judge": {
@@ -11,11 +11,13 @@
       "reason": "Refused but should have responded."
     },
     "debug": {
-      "rewritten": "What is L2 regularization and in what ways does it influence the weights of a model?",
+      "hybrid_detected": true,
+      "hybrid_original": "What is a confusion matrix and how do precision and recall relate to it?",
+      "rewritten": "What is a confusion matrix?",
       "agent_path": "obnoxious -> rewrite -> retrieve -> answer",
       "docs_count": 6,
       "namespace": "ns500",
-      "top_doc_preview": "128 a course in machine learning\nsquared 2-norm regularizer on the weights. (A 1-norm regularizer\ncan be obtained by using a Laplace prior on w rather than a Gaussian\nprior on w.)\n9.8 Further Reading\nTODO..."
+      "top_doc_preview": "28 a course in machine learning\nthis case from the following month. We can ( 11) measure the overall\nquality of our predictor as zero/one loss (clasi\ufb01cation error) on this\ntest data and \ufb01nally (12) deploy our system.\nThe important thing about this sequence of steps is that in any\none, things can go ..."
     }
   },
   {
@@ -49,7 +51,9 @@
       "reason": "Refused but should have responded."
     },
     "debug": {
-      "rewritten": "What is the difference between training loss and validation loss, and what does it indicate when these two metrics diverge?",
+      "hybrid_detected": true,
+      "hybrid_original": "Explain the difference between training loss and validation loss and what it means when they diverge.",
+      "rewritten": "What is the difference between training loss and validation loss?",
       "agent_path": "obnoxious -> rewrite -> retrieve -> answer",
       "docs_count": 6,
       "namespace": "ns500",
@@ -70,7 +74,7 @@
     "debug": {
       "hybrid_detected": true,
       "hybrid_original": "Explain logistic regression, and also tell me the capital of France.",
-      "rewritten": "Can you explain what logistic regression is?",
+      "rewritten": "Can you explain logistic regression?",
       "agent_path": "obnoxious -> rewrite -> retrieve -> answer",
       "docs_count": 6,
       "namespace": "ns500",
@@ -82,7 +86,7 @@
     "category": "hybrid",
     "user_input": "What is overfitting in machine learning? Also, who won the Super Bowl in 2026?",
     "turns": [],
-    "bot_reply": "Overfitting in machine learning is when a model pays too much attention to the idiosyncrasies of the training data and is not able to generalize well, often fitting noise rather than the true underlying pattern. \n\nREFUSE: irrelevant \u2014 I do not have enough relevant information in the document to answer who won the Super Bowl in 2026.",
+    "bot_reply": "Overfitting in machine learning is when a model pays too much attention to the idiosyncrasies of the training data and is unable to generalize well. It often means the model is fitting noise rather than the underlying pattern. \n\nREFUSE: irrelevant \u2014 I do not have enough relevant information in the document to answer who won the Super Bowl in 2026.",
     "judge": {
       "score": 0,
       "decision": "respond",
@@ -96,6 +100,27 @@
       "docs_count": 6,
       "namespace": "ns500",
       "top_doc_preview": "224 a course in machine learning..."
+    }
+  },
+  {
+    "id": "hybrid_04",
+    "category": "hybrid",
+    "user_input": "Explain gradient descent. Also what\u2019s tomorrow\u2019s weather in New York?",
+    "turns": [],
+    "bot_reply": "REFUSE: irrelevant \u2014 I do not have enough relevant information in the document to answer that.",
+    "judge": {
+      "score": 0,
+      "decision": "refuse",
+      "reason": "Hybrid refused everything; expected answer relevant part."
+    },
+    "debug": {
+      "hybrid_detected": true,
+      "hybrid_original": "Explain gradient descent. Also what\u2019s tomorrow\u2019s weather in New York?",
+      "rewritten": "Can you explain gradient descent and tell me what the weather will be in New York tomorrow?",
+      "agent_path": "obnoxious -> rewrite -> retrieve -> answer",
+      "docs_count": 6,
+      "namespace": "ns500",
+      "top_doc_preview": "96 a course in machine learning\nquickly, which means that you need to take small steps to avoid\noverstepping the optimum.\nThis convergence result suggests a simple approach to decid-\ning when to stop optimizing: wait until the objective function stops\nchanging by much. An alternative is to wait unti..."
     }
   },
   {
@@ -124,7 +149,7 @@
     "category": "hybrid",
     "user_input": "What is the bias\u2013variance tradeoff? Also give me three gift ideas for my friend.",
     "turns": [],
-    "bot_reply": "The bias\u2013variance tradeoff is the fundamental trade-off between estimation error and approximation error. As the model complexity increases, the approximation error (bias) decreases, but the estimation error (variance) tends to increase, and vice versa.\n\nREFUSE: gift ideas \u2014 I do not have enough relevant information in the document to answer that.",
+    "bot_reply": "The bias\u2013variance tradeoff is the fundamental trade-off between estimation error and approximation error. Approximation error is associated with bias, and estimation error is associated with variance. Making the model more complex reduces bias but increases variance, and vice versa. \n\nREFUSE: gift ideas \u2014 I do not have enough relevant information in the document to answer that.",
     "judge": {
       "score": 0,
       "decision": "respond",
@@ -169,62 +194,6 @@
     }
   },
   {
-    "id": "multi_turn_02",
-    "category": "multi_turn",
-    "user_input": "",
-    "turns": [
-      {
-        "role": "user",
-        "content": "What is overfitting?"
-      },
-      {
-        "role": "user",
-        "content": "How can I reduce it? Give two common strategies."
-      }
-    ],
-    "bot_reply": "REFUSE: irrelevant \u2014 I do not have enough relevant information in the document to answer that.",
-    "judge": {
-      "score": 0,
-      "decision": "refuse",
-      "reason": "Refused but should have responded."
-    },
-    "debug": {
-      "rewritten": "What are two common strategies to reduce overfitting in machine learning models?",
-      "agent_path": "obnoxious -> rewrite -> retrieve -> answer",
-      "docs_count": 6,
-      "namespace": "ns500",
-      "top_doc_preview": "limits of learning 27\nhyperparameters. The general approach is as follows:\n1. Split your data into 70% training data, 10% development data and\n20% test data.\n2. For each possible setting of your hyperparameters:\n(a) Train a model using that setting of hyperparameters on the\ntraining data.\n(b) Comput..."
-    }
-  },
-  {
-    "id": "multi_turn_05",
-    "category": "multi_turn",
-    "user_input": "",
-    "turns": [
-      {
-        "role": "user",
-        "content": "Explain the bias\u2013variance tradeoff."
-      },
-      {
-        "role": "user",
-        "content": "When would a more complex model hurt performance?"
-      }
-    ],
-    "bot_reply": "REFUSE: irrelevant \u2014 I do not have enough relevant information in the document to answer that.",
-    "judge": {
-      "score": 0,
-      "decision": "refuse",
-      "reason": "Refused but should have responded."
-    },
-    "debug": {
-      "rewritten": "In what situations can increasing model complexity negatively impact the performance of a machine learning model?",
-      "agent_path": "obnoxious -> rewrite -> retrieve -> answer",
-      "docs_count": 6,
-      "namespace": "ns500",
-      "top_doc_preview": "a huge impact on the practical performance of learning systems. In\nmany cases, moving to a more complicated learning algorithm will\ngain you a few percent improvement. Going to a better representa-\ntion will gain you an order of magnitude improvement. To this end,\nwe will discuss several high level ..."
-    }
-  },
-  {
     "id": "multi_turn_07",
     "category": "multi_turn",
     "user_input": "",
@@ -245,7 +214,7 @@
       "reason": "Refused but should have responded."
     },
     "debug": {
-      "rewritten": "What are the conceptual differences between L1 regularization and L2 regularization?",
+      "rewritten": "What are the conceptual differences between L1 and L2 regularization?",
       "agent_path": "obnoxious -> rewrite -> retrieve -> answer",
       "docs_count": 6,
       "namespace": "ns500",

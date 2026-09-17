@@ -75,15 +75,25 @@ class Head_Agent:
         # 3) Hybrid prompt handling: keep ONLY the ML part
         ml_keywords = [
             "machine learning", "logistic", "sigmoid", "gradient", "overfitting",
-            "regularization", "cross-validation", "confusion matrix",
-            "precision", "recall", "bias", "variance", "decision boundary",
-            "svm", "support vector", "neural network", "k-means",
-            "training loss", "validation loss", "generative", "discriminative",
+            "regularization", "cross-validation", "cross validation",
+            "confusion matrix", "precision", "recall", "bias", "variance",
+            "decision boundary", "svm", "support vector", "neural network",
+            "k-means", "training loss", "validation loss",
+            "generative", "discriminative", "supervised", "unsupervised",
+            "classification", "regression", "clustering", "embedding",
+            "backpropagation", "activation function", "loss function",
+            "feature", "hyperparameter", "epoch", "batch size",
             "l1", "l2",
         ]
 
         lower = prompt.lower()
-        separators = [" and also ", " also,", " also ", ";", " then "]
+        separators = [
+            " and also ", " also,", " also ",
+            " and do you ", " and what ", " and tell me ", " and can you ",
+            " and how do ", " and who ", " and where ",
+            " but also ", " but what ", " but can you ",
+            ";", " then ",
+        ]
 
         chosen = None
         for sep in separators:
