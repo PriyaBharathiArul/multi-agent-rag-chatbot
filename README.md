@@ -37,7 +37,9 @@ The system is evaluated using a custom LLM-as-a-Judge that scores **behavioral c
 
 Accuracy improved from 42% to 80% over 3 iterations, with each round using failure analysis from the LLM-as-a-Judge to guide targeted fixes.
 
-![Evaluation Results](docs/evaluation_result.png)
+![Iteration Results](docs/Iteration.png)
+
+![Final Evaluation](docs/FinalEvaluation.png)
 
 For the full iteration-by-iteration breakdown and fix analysis, see the [Evaluation Report](docs/evaluation_report.md).
 
