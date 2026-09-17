@@ -121,6 +121,9 @@ python -m ingestion.index_pdf --pdf path/to/machine-learning.pdf --chunk-size 50
 ```bash
 streamlit run app.py
 ```
+## Demo
+
+![Chatbot Demo](docs/chatbot_demo.png)
 
 ### Run the Evaluation
 
