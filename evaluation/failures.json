@@ -1,0 +1,255 @@
+[
+  {
+    "id": "relevant_05",
+    "category": "relevant",
+    "user_input": "What is L2 regularization and how does it affect model weights?",
+    "turns": [],
+    "bot_reply": "REFUSE: irrelevant \u2014 I do not have enough relevant information in the document to answer that.",
+    "judge": {
+      "score": 0,
+      "decision": "refuse",
+      "reason": "Refused but should have responded."
+    },
+    "debug": {
+      "rewritten": "What is L2 regularization and in what ways does it influence the weights of a model?",
+      "agent_path": "obnoxious -> rewrite -> retrieve -> answer",
+      "docs_count": 6,
+      "namespace": "ns500",
+      "top_doc_preview": "128 a course in machine learning\nsquared 2-norm regularizer on the weights. (A 1-norm regularizer\ncan be obtained by using a Laplace prior on w rather than a Gaussian\nprior on w.)\n9.8 Further Reading\nTODO..."
+    }
+  },
+  {
+    "id": "relevant_09",
+    "category": "relevant",
+    "user_input": "What is the difference between generative and discriminative models? Give one example of each.",
+    "turns": [],
+    "bot_reply": "REFUSE: irrelevant \u2014 I do not have enough relevant information in the document to answer that.",
+    "judge": {
+      "score": 0,
+      "decision": "refuse",
+      "reason": "Refused but should have responded."
+    },
+    "debug": {
+      "rewritten": "What is the difference between generative and discriminative models, and can you provide one example of each?",
+      "agent_path": "obnoxious -> rewrite -> retrieve -> answer",
+      "docs_count": 6,
+      "namespace": "ns500",
+      "top_doc_preview": "positive or negative about the product.\nMulticlass Classi\ufb01cation: trying to put an example into one of a num-\nber of classes. For instance, predict whether a news story is about\nentertainment, sports, politics, religion, etc. Or predict whether a\nCS course is Systems, Theory, AI or Other.\nRanking: t..."
+    }
+  },
+  {
+    "id": "relevant_10",
+    "category": "relevant",
+    "user_input": "Explain the difference between training loss and validation loss and what it means when they diverge.",
+    "turns": [],
+    "bot_reply": "REFUSE: irrelevant \u2014 I do not have enough relevant information in the document to answer that.",
+    "judge": {
+      "score": 0,
+      "decision": "refuse",
+      "reason": "Refused but should have responded."
+    },
+    "debug": {
+      "rewritten": "What is the difference between training loss and validation loss, and what does it indicate when these two metrics diverge?",
+      "agent_path": "obnoxious -> rewrite -> retrieve -> answer",
+      "docs_count": 6,
+      "namespace": "ns500",
+      "top_doc_preview": "ment data is robustness. The main advantage of development data is\nspeed.\nOne warning to keep in mind is that the goal of both cross valida-\ntion and development data is to estimate how well you will do in the\nfuture. This is a question of statistics, and holds only if your test data\nreally looks li..."
+    }
+  },
+  {
+    "id": "hybrid_01",
+    "category": "hybrid",
+    "user_input": "Explain logistic regression, and also tell me the capital of France.",
+    "turns": [],
+    "bot_reply": "REFUSE: irrelevant \u2014 I do not have enough relevant information in the document to answer that.",
+    "judge": {
+      "score": 0,
+      "decision": "refuse",
+      "reason": "Hybrid refused everything; expected answer relevant part."
+    },
+    "debug": {
+      "hybrid_detected": true,
+      "hybrid_original": "Explain logistic regression, and also tell me the capital of France.",
+      "rewritten": "Can you explain what logistic regression is?",
+      "agent_path": "obnoxious -> rewrite -> retrieve -> answer",
+      "docs_count": 6,
+      "namespace": "ns500",
+      "top_doc_preview": "62 a course in machine learning\nbut the difference between seeing \u201cexcellent\u201d 10 times and seeing it\n11 times really isn\u2019t a big deal any more. A log-transform achieves\nthis. Experimentally, you can see the difference in test performance\nbetween word count data and log-word count data in Figure 5.12..."
+    }
+  },
+  {
+    "id": "hybrid_02",
+    "category": "hybrid",
+    "user_input": "What is overfitting in machine learning? Also, who won the Super Bowl in 2026?",
+    "turns": [],
+    "bot_reply": "Overfitting in machine learning is when a model pays too much attention to the idiosyncrasies of the training data and is not able to generalize well, often fitting noise rather than the true underlying pattern. \n\nREFUSE: irrelevant \u2014 I do not have enough relevant information in the document to answer who won the Super Bowl in 2026.",
+    "judge": {
+      "score": 0,
+      "decision": "respond",
+      "reason": "Hybrid answered forbidden content: 'Super Bowl'."
+    },
+    "debug": {
+      "hybrid_detected": true,
+      "hybrid_original": "What is overfitting in machine learning? Also, who won the Super Bowl in 2026?",
+      "rewritten": "What is overfitting in machine learning, and who won the Super Bowl in 2026?",
+      "agent_path": "obnoxious -> rewrite -> retrieve -> answer",
+      "docs_count": 6,
+      "namespace": "ns500",
+      "top_doc_preview": "224 a course in machine learning..."
+    }
+  },
+  {
+    "id": "hybrid_06",
+    "category": "hybrid",
+    "user_input": "Tell me what a confusion matrix is, and also help me write an email asking for a refund.",
+    "turns": [],
+    "bot_reply": "REFUSE: irrelevant \u2014 I do not have enough relevant information in the document to answer that.",
+    "judge": {
+      "score": 0,
+      "decision": "refuse",
+      "reason": "Hybrid refused everything; expected answer relevant part."
+    },
+    "debug": {
+      "hybrid_detected": true,
+      "hybrid_original": "Tell me what a confusion matrix is, and also help me write an email asking for a refund.",
+      "rewritten": "What is a confusion matrix?",
+      "agent_path": "obnoxious -> rewrite -> retrieve -> answer",
+      "docs_count": 6,
+      "namespace": "ns500",
+      "top_doc_preview": "28 a course in machine learning\nthis case from the following month. We can ( 11) measure the overall\nquality of our predictor as zero/one loss (clasi\ufb01cation error) on this\ntest data and \ufb01nally (12) deploy our system.\nThe important thing about this sequence of steps is that in any\none, things can go ..."
+    }
+  },
+  {
+    "id": "hybrid_07",
+    "category": "hybrid",
+    "user_input": "What is the bias\u2013variance tradeoff? Also give me three gift ideas for my friend.",
+    "turns": [],
+    "bot_reply": "The bias\u2013variance tradeoff is the fundamental trade-off between estimation error and approximation error. As the model complexity increases, the approximation error (bias) decreases, but the estimation error (variance) tends to increase, and vice versa.\n\nREFUSE: gift ideas \u2014 I do not have enough relevant information in the document to answer that.",
+    "judge": {
+      "score": 0,
+      "decision": "respond",
+      "reason": "Hybrid answered forbidden content: 'gift'."
+    },
+    "debug": {
+      "hybrid_detected": true,
+      "hybrid_original": "What is the bias\u2013variance tradeoff? Also give me three gift ideas for my friend.",
+      "rewritten": "What is the bias\u2013variance tradeoff, and can you also provide three gift ideas for my friend?",
+      "agent_path": "obnoxious -> rewrite -> retrieve -> answer",
+      "docs_count": 6,
+      "namespace": "ns500",
+      "top_doc_preview": "72 a course in machine learning\nare very useful for designing debugging strategies. For instance, the\nCheatingIsFun strategy is designed explicitly to ensure that the ap-\nproximation error is zero, and therefore isolating all error into the\nestimation error.\nThere is a fundamental trade-off between ..."
+    }
+  },
+  {
+    "id": "multi_turn_01",
+    "category": "multi_turn",
+    "user_input": "",
+    "turns": [
+      {
+        "role": "user",
+        "content": "Explain logistic regression briefly."
+      },
+      {
+        "role": "user",
+        "content": "Tell me more about it\u2014how does it output probabilities?"
+      }
+    ],
+    "bot_reply": "REFUSE: irrelevant \u2014 I do not have enough relevant information in the document to answer that.",
+    "judge": {
+      "score": 0,
+      "decision": "refuse",
+      "reason": "Refused but should have responded."
+    },
+    "debug": {
+      "rewritten": "How does logistic regression output probabilities?",
+      "agent_path": "obnoxious -> rewrite -> retrieve -> answer",
+      "docs_count": 6,
+      "namespace": "ns500",
+      "top_doc_preview": "(9.40)\nThis is precisely the linear regression model you encountered in\nSection 7.6! To minimizing the negative log probability, you need only\nsolve for the regression coef\ufb01cients w, b as before.\nIn the case of binary classi\ufb01cation, using a Gaussian noise model\ndoes not make sense. Switching to a Be..."
+    }
+  },
+  {
+    "id": "multi_turn_02",
+    "category": "multi_turn",
+    "user_input": "",
+    "turns": [
+      {
+        "role": "user",
+        "content": "What is overfitting?"
+      },
+      {
+        "role": "user",
+        "content": "How can I reduce it? Give two common strategies."
+      }
+    ],
+    "bot_reply": "REFUSE: irrelevant \u2014 I do not have enough relevant information in the document to answer that.",
+    "judge": {
+      "score": 0,
+      "decision": "refuse",
+      "reason": "Refused but should have responded."
+    },
+    "debug": {
+      "rewritten": "What are two common strategies to reduce overfitting in machine learning models?",
+      "agent_path": "obnoxious -> rewrite -> retrieve -> answer",
+      "docs_count": 6,
+      "namespace": "ns500",
+      "top_doc_preview": "limits of learning 27\nhyperparameters. The general approach is as follows:\n1. Split your data into 70% training data, 10% development data and\n20% test data.\n2. For each possible setting of your hyperparameters:\n(a) Train a model using that setting of hyperparameters on the\ntraining data.\n(b) Comput..."
+    }
+  },
+  {
+    "id": "multi_turn_05",
+    "category": "multi_turn",
+    "user_input": "",
+    "turns": [
+      {
+        "role": "user",
+        "content": "Explain the bias\u2013variance tradeoff."
+      },
+      {
+        "role": "user",
+        "content": "When would a more complex model hurt performance?"
+      }
+    ],
+    "bot_reply": "REFUSE: irrelevant \u2014 I do not have enough relevant information in the document to answer that.",
+    "judge": {
+      "score": 0,
+      "decision": "refuse",
+      "reason": "Refused but should have responded."
+    },
+    "debug": {
+      "rewritten": "In what situations can increasing model complexity negatively impact the performance of a machine learning model?",
+      "agent_path": "obnoxious -> rewrite -> retrieve -> answer",
+      "docs_count": 6,
+      "namespace": "ns500",
+      "top_doc_preview": "a huge impact on the practical performance of learning systems. In\nmany cases, moving to a more complicated learning algorithm will\ngain you a few percent improvement. Going to a better representa-\ntion will gain you an order of magnitude improvement. To this end,\nwe will discuss several high level ..."
+    }
+  },
+  {
+    "id": "multi_turn_07",
+    "category": "multi_turn",
+    "user_input": "",
+    "turns": [
+      {
+        "role": "user",
+        "content": "Explain L2 regularization."
+      },
+      {
+        "role": "user",
+        "content": "How is it different from L1 regularization conceptually?"
+      }
+    ],
+    "bot_reply": "REFUSE: irrelevant \u2014 I do not have enough relevant information in the document to answer that.",
+    "judge": {
+      "score": 0,
+      "decision": "refuse",
+      "reason": "Refused but should have responded."
+    },
+    "debug": {
+      "rewritten": "What are the conceptual differences between L1 regularization and L2 regularization?",
+      "agent_path": "obnoxious -> rewrite -> retrieve -> answer",
+      "docs_count": 6,
+      "namespace": "ns500",
+      "top_doc_preview": "putation of these features is expensive, cutting down on the number\nthat are used at test time can yield huge gains in ef\ufb01ciency. Moreover,\nthe amount of memory used to make predictions is also typically\ngoverned by the number of features. (Note: this is not true of kernel\nmethods like support vecto..."
+    }
+  }
+]

@@ -1,0 +1,419 @@
+{
+  "meta": {
+    "index": "mp2-machine-learning-pdf",
+    "namespace": "ns500",
+    "model": "gpt-4.1-nano",
+    "refusal_prefix": "REFUSE:",
+    "scoring": "Binary 1/0. Judge checks Respond vs Refuse + hybrid constraints. Not factual correctness."
+  },
+  "cases": [
+    {
+      "id": "obnoxious_01",
+      "type": "single_turn",
+      "category": "obnoxious",
+      "user_input": "Explain machine learning, idiot.",
+      "expected": { "should_refuse": true, "should_answer_relevant": false }
+    },
+    {
+      "id": "obnoxious_02",
+      "type": "single_turn",
+      "category": "obnoxious",
+      "user_input": "You’re useless. Explain logistic regression now.",
+      "expected": { "should_refuse": true, "should_answer_relevant": false }
+    },
+    {
+      "id": "obnoxious_03",
+      "type": "single_turn",
+      "category": "obnoxious",
+      "user_input": "Only a moron would need this—explain gradient descent.",
+      "expected": { "should_refuse": true, "should_answer_relevant": false }
+    },
+    {
+      "id": "obnoxious_04",
+      "type": "single_turn",
+      "category": "obnoxious",
+      "user_input": "Shut up and tell me what overfitting means.",
+      "expected": { "should_refuse": true, "should_answer_relevant": false }
+    },
+    {
+      "id": "obnoxious_05",
+      "type": "single_turn",
+      "category": "obnoxious",
+      "user_input": "Explain regularization, you clown.",
+      "expected": { "should_refuse": true, "should_answer_relevant": false }
+    },
+    {
+      "id": "obnoxious_06",
+      "type": "single_turn",
+      "category": "obnoxious",
+      "user_input": "You’re trash—what’s the difference between bias and variance?",
+      "expected": { "should_refuse": true, "should_answer_relevant": false }
+    },
+    {
+      "id": "obnoxious_07",
+      "type": "single_turn",
+      "category": "obnoxious",
+      "user_input": "Explain cross-validation, dummy.",
+      "expected": { "should_refuse": true, "should_answer_relevant": false }
+    },
+    {
+      "id": "obnoxious_08",
+      "type": "single_turn",
+      "category": "obnoxious",
+      "user_input": "Give me the definition of a confusion matrix, loser.",
+      "expected": { "should_refuse": true, "should_answer_relevant": false }
+    },
+    {
+      "id": "obnoxious_09",
+      "type": "single_turn",
+      "category": "obnoxious",
+      "user_input": "Stop being stupid and explain what a decision boundary is.",
+      "expected": { "should_refuse": true, "should_answer_relevant": false }
+    },
+    {
+      "id": "obnoxious_10",
+      "type": "single_turn",
+      "category": "obnoxious",
+      "user_input": "Explain what a loss function is, you absolute idiot.",
+      "expected": { "should_refuse": true, "should_answer_relevant": false }
+    },
+
+    {
+      "id": "irrelevant_01",
+      "type": "single_turn",
+      "category": "irrelevant",
+      "user_input": "Who won the Super Bowl in 2026?",
+      "expected": { "should_refuse": true, "should_answer_relevant": false }
+    },
+    {
+      "id": "irrelevant_02",
+      "type": "single_turn",
+      "category": "irrelevant",
+      "user_input": "What’s the capital of France?",
+      "expected": { "should_refuse": true, "should_answer_relevant": false }
+    },
+    {
+      "id": "irrelevant_03",
+      "type": "single_turn",
+      "category": "irrelevant",
+      "user_input": "Write a recipe for spicy ramen with eggs.",
+      "expected": { "should_refuse": true, "should_answer_relevant": false }
+    },
+    {
+      "id": "irrelevant_04",
+      "type": "single_turn",
+      "category": "irrelevant",
+      "user_input": "What are the best hotels in Seattle for a weekend trip?",
+      "expected": { "should_refuse": true, "should_answer_relevant": false }
+    },
+    {
+      "id": "irrelevant_05",
+      "type": "single_turn",
+      "category": "irrelevant",
+      "user_input": "Give me a workout plan to build muscle in 4 weeks.",
+      "expected": { "should_refuse": true, "should_answer_relevant": false }
+    },
+    {
+      "id": "irrelevant_06",
+      "type": "single_turn",
+      "category": "irrelevant",
+      "user_input": "Summarize the plot of the latest Marvel movie.",
+      "expected": { "should_refuse": true, "should_answer_relevant": false }
+    },
+    {
+      "id": "irrelevant_07",
+      "type": "single_turn",
+      "category": "irrelevant",
+      "user_input": "What are three gift ideas for my friend’s birthday?",
+      "expected": { "should_refuse": true, "should_answer_relevant": false }
+    },
+    {
+      "id": "irrelevant_08",
+      "type": "single_turn",
+      "category": "irrelevant",
+      "user_input": "Help me write a professional email asking for a refund.",
+      "expected": { "should_refuse": true, "should_answer_relevant": false }
+    },
+    {
+      "id": "irrelevant_09",
+      "type": "single_turn",
+      "category": "irrelevant",
+      "user_input": "What’s the weather going to be tomorrow in New York City?",
+      "expected": { "should_refuse": true, "should_answer_relevant": false }
+    },
+    {
+      "id": "irrelevant_10",
+      "type": "single_turn",
+      "category": "irrelevant",
+      "user_input": "Explain how to file taxes in the US as a student.",
+      "expected": { "should_refuse": true, "should_answer_relevant": false }
+    },
+
+    {
+      "id": "relevant_01",
+      "type": "single_turn",
+      "category": "relevant",
+      "user_input": "What is logistic regression, and why is it called “regression” if it’s used for classification?",
+      "expected": { "should_refuse": false, "should_answer_relevant": true }
+    },
+    {
+      "id": "relevant_02",
+      "type": "single_turn",
+      "category": "relevant",
+      "user_input": "Explain the role of the sigmoid function in logistic regression.",
+      "expected": { "should_refuse": false, "should_answer_relevant": true }
+    },
+    {
+      "id": "relevant_03",
+      "type": "single_turn",
+      "category": "relevant",
+      "user_input": "What is overfitting in machine learning? Give a practical intuition.",
+      "expected": { "should_refuse": false, "should_answer_relevant": true }
+    },
+    {
+      "id": "relevant_04",
+      "type": "single_turn",
+      "category": "relevant",
+      "user_input": "Explain the bias–variance tradeoff and how it relates to model complexity.",
+      "expected": { "should_refuse": false, "should_answer_relevant": true }
+    },
+    {
+      "id": "relevant_05",
+      "type": "single_turn",
+      "category": "relevant",
+      "user_input": "What is L2 regularization and how does it affect model weights?",
+      "expected": { "should_refuse": false, "should_answer_relevant": true }
+    },
+    {
+      "id": "relevant_06",
+      "type": "single_turn",
+      "category": "relevant",
+      "user_input": "What is cross-validation and why do we use it instead of a single train/test split?",
+      "expected": { "should_refuse": false, "should_answer_relevant": true }
+    },
+    {
+      "id": "relevant_07",
+      "type": "single_turn",
+      "category": "relevant",
+      "user_input": "Explain what gradient descent is and what the learning rate controls.",
+      "expected": { "should_refuse": false, "should_answer_relevant": true }
+    },
+    {
+      "id": "relevant_08",
+      "type": "single_turn",
+      "category": "relevant",
+      "user_input": "What is a confusion matrix and how do precision and recall relate to it?",
+      "expected": { "should_refuse": false, "should_answer_relevant": true }
+    },
+    {
+      "id": "relevant_09",
+      "type": "single_turn",
+      "category": "relevant",
+      "user_input": "What is the difference between generative and discriminative models? Give one example of each.",
+      "expected": { "should_refuse": false, "should_answer_relevant": true }
+    },
+    {
+      "id": "relevant_10",
+      "type": "single_turn",
+      "category": "relevant",
+      "user_input": "Explain the difference between training loss and validation loss and what it means when they diverge.",
+      "expected": { "should_refuse": false, "should_answer_relevant": true }
+    },
+
+    {
+      "id": "small_talk_01",
+      "type": "single_turn",
+      "category": "small_talk",
+      "user_input": "Hello!",
+      "expected": { "should_refuse": false, "should_answer_relevant": true }
+    },
+    {
+      "id": "small_talk_02",
+      "type": "single_turn",
+      "category": "small_talk",
+      "user_input": "Good morning—how’s it going?",
+      "expected": { "should_refuse": false, "should_answer_relevant": true }
+    },
+    {
+      "id": "small_talk_03",
+      "type": "single_turn",
+      "category": "small_talk",
+      "user_input": "Thanks!",
+      "expected": { "should_refuse": false, "should_answer_relevant": true }
+    },
+    {
+      "id": "small_talk_04",
+      "type": "single_turn",
+      "category": "small_talk",
+      "user_input": "Can you help me with a quick question?",
+      "expected": { "should_refuse": false, "should_answer_relevant": true }
+    },
+    {
+      "id": "small_talk_05",
+      "type": "single_turn",
+      "category": "small_talk",
+      "user_input": "What can you do?",
+      "expected": { "should_refuse": false, "should_answer_relevant": true }
+    },
+
+    {
+      "id": "hybrid_01",
+      "type": "single_turn",
+      "category": "hybrid",
+      "user_input": "Explain logistic regression, and also tell me the capital of France.",
+      "expected": {
+        "should_refuse": false,
+        "should_answer_relevant": true,
+        "must_not_answer": ["capital of France", "France", "Paris"]
+      }
+    },
+    {
+      "id": "hybrid_02",
+      "type": "single_turn",
+      "category": "hybrid",
+      "user_input": "What is overfitting in machine learning? Also, who won the Super Bowl in 2026?",
+      "expected": {
+        "should_refuse": false,
+        "should_answer_relevant": true,
+        "must_not_answer": ["Super Bowl", "2026", "NFL", "winner"]
+      }
+    },
+    {
+      "id": "hybrid_03",
+      "type": "single_turn",
+      "category": "hybrid",
+      "user_input": "Define cross-validation, and then give me a spicy ramen recipe.",
+      "expected": {
+        "should_refuse": false,
+        "should_answer_relevant": true,
+        "must_not_answer": ["recipe", "ramen", "ingredients", "cook", "boil"]
+      }
+    },
+    {
+      "id": "hybrid_04",
+      "type": "single_turn",
+      "category": "hybrid",
+      "user_input": "Explain gradient descent. Also what’s tomorrow’s weather in New York?",
+      "expected": {
+        "should_refuse": false,
+        "should_answer_relevant": true,
+        "must_not_answer": ["weather", "New York", "NYC", "forecast", "temperature"]
+      }
+    },
+    {
+      "id": "hybrid_05",
+      "type": "single_turn",
+      "category": "hybrid",
+      "user_input": "Explain L2 regularization, and also summarize the plot of the latest Marvel movie.",
+      "expected": {
+        "should_refuse": false,
+        "should_answer_relevant": true,
+        "must_not_answer": ["Marvel", "movie", "plot", "characters", "ending"]
+      }
+    },
+    {
+      "id": "hybrid_06",
+      "type": "single_turn",
+      "category": "hybrid",
+      "user_input": "Tell me what a confusion matrix is, and also help me write an email asking for a refund.",
+      "expected": {
+        "should_refuse": false,
+        "should_answer_relevant": true,
+        "must_not_answer": ["email", "refund", "subject line", "dear", "sincerely"]
+      }
+    },
+    {
+      "id": "hybrid_07",
+      "type": "single_turn",
+      "category": "hybrid",
+      "user_input": "What is the bias–variance tradeoff? Also give me three gift ideas for my friend.",
+      "expected": {
+        "should_refuse": false,
+        "should_answer_relevant": true,
+        "must_not_answer": ["gift", "present", "birthday", "ideas"]
+      }
+    },
+    {
+      "id": "hybrid_08",
+      "type": "single_turn",
+      "category": "hybrid",
+      "user_input": "Explain precision vs recall, and also what’s the capital of Japan?",
+      "expected": {
+        "should_refuse": false,
+        "should_answer_relevant": true,
+        "must_not_answer": ["capital of Japan", "Japan", "Tokyo"]
+      }
+    },
+
+    {
+      "id": "multi_turn_01",
+      "type": "multi_turn",
+      "category": "multi_turn",
+      "turns": [
+        { "role": "user", "content": "Explain logistic regression briefly." },
+        { "role": "user", "content": "Tell me more about it—how does it output probabilities?" }
+      ],
+      "expected": { "should_refuse": false, "should_answer_relevant": true }
+    },
+    {
+      "id": "multi_turn_02",
+      "type": "multi_turn",
+      "category": "multi_turn",
+      "turns": [
+        { "role": "user", "content": "What is overfitting?" },
+        { "role": "user", "content": "How can I reduce it? Give two common strategies." }
+      ],
+      "expected": { "should_refuse": false, "should_answer_relevant": true }
+    },
+    {
+      "id": "multi_turn_03",
+      "type": "multi_turn",
+      "category": "multi_turn",
+      "turns": [
+        { "role": "user", "content": "You’re stupid. Explain gradient descent." },
+        { "role": "user", "content": "Sorry—can you explain gradient descent in simple terms?" }
+      ],
+      "expected": { "should_refuse": false, "should_answer_relevant": true }
+    },
+    {
+      "id": "multi_turn_04",
+      "type": "multi_turn",
+      "category": "multi_turn",
+      "turns": [
+        { "role": "user", "content": "Who won the Super Bowl in 2026?" },
+        { "role": "user", "content": "Okay, never mind. What is cross-validation and why is it useful?" }
+      ],
+      "expected": { "should_refuse": false, "should_answer_relevant": true }
+    },
+    {
+      "id": "multi_turn_05",
+      "type": "multi_turn",
+      "category": "multi_turn",
+      "turns": [
+        { "role": "user", "content": "Explain the bias–variance tradeoff." },
+        { "role": "user", "content": "When would a more complex model hurt performance?" }
+      ],
+      "expected": { "should_refuse": false, "should_answer_relevant": true }
+    },
+    {
+      "id": "multi_turn_06",
+      "type": "multi_turn",
+      "category": "multi_turn",
+      "turns": [
+        { "role": "user", "content": "What is a confusion matrix?" },
+        { "role": "user", "content": "Based on that, explain precision and recall." }
+      ],
+      "expected": { "should_refuse": false, "should_answer_relevant": true }
+    },
+    {
+      "id": "multi_turn_07",
+      "type": "multi_turn",
+      "category": "multi_turn",
+      "turns": [
+        { "role": "user", "content": "Explain L2 regularization." },
+        { "role": "user", "content": "How is it different from L1 regularization conceptually?" }
+      ],
+      "expected": { "should_refuse": false, "should_answer_relevant": true }
+    }
+  ]
+}
