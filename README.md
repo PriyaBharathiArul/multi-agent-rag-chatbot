@@ -4,36 +4,7 @@ A multi-agent Retrieval-Augmented Generation (RAG) chatbot that answers question
 
 ## Architecture
 
-```
-User Query
-    │
-    ▼
-┌──────────────────────────────────────────────────────┐
-│                    Head Agent                         │
-│              (Controller / Orchestrator)              │
-│                                                      │
-│  1. Safety Gate ──► Obnoxious Agent                  │
-│     (toxicity classifier — blocks abusive input)     │
-│                                                      │
-│  2. Small-Talk Bypass                                │
-│     (greetings, thanks → quick reply)                │
-│                                                      │
-│  3. Hybrid Prompt Splitter                           │
-│     (mixed ML + non-ML → keeps only the ML part)    │
-│                                                      │
-│  4. Query Rewrite ──► Context Rewriter Agent         │
-│     (resolves coreferences from conversation history)│
-│                                                      │
-│  5. Retrieval ──► Query Agent                        │
-│     (similarity search on Pinecone vector store)     │
-│                                                      │
-│  6. Grounded Answer ──► Answering Agent              │
-│     (answers strictly from retrieved excerpts)       │
-└──────────────────────────────────────────────────────┘
-    │
-    ▼
-  Response
-```
+![Multi-Agent RAG Pipeline](docs/architecture.png)
 
 ### Agent Details
 
