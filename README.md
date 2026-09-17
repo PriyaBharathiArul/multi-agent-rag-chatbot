@@ -2,6 +2,10 @@
 
 A multi-agent Retrieval-Augmented Generation (RAG) chatbot that answers questions about a Machine Learning textbook. Built with a 5-agent architecture and evaluated using an LLM-as-a-Judge harness across 50 test cases and 6 behavioral categories.
 
+## Demo
+
+![Chatbot Demo](docs/chatbot_demo.png)
+
 ## Architecture
 
 ![Multi-Agent RAG Pipeline](docs/architecture.png)

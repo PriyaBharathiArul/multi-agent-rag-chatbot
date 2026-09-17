@@ -128,7 +128,13 @@ class Head_Agent:
                 debug,
             )
 
-        # 6) Answer
-        answer = self.answering_agent.generate_response(rewritten, docs)
+        # 6) Answer (pass last assistant reply for multi-turn context)
+        prior_answer = ""
+        for msg in reversed(conversation):
+            if msg.get("role") == "assistant":
+                prior_answer = msg["content"]
+                break
+
+        answer = self.answering_agent.generate_response(rewritten, docs, prior_answer=prior_answer)
         debug["agent_path"] = "obnoxious -> rewrite -> retrieve -> answer"
         return answer, debug

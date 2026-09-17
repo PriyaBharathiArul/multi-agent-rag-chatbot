@@ -17,8 +17,8 @@ The chatbot was evaluated using a custom **LLM-as-a-Judge** harness that scores 
 
 ## Iteration Results
 
-![Iteration](Iteration.png)
-![Final Evaluation](FinalEvaluation.png)
+![Iteration](../docs/Iteration.png)
+![Final Evaluation](../docs/FinalEvaluation.png)
 
 | Category | Iteration 1 | Iteration 2 | Iteration 3 (Final) |
 |----------|------------|------------|---------------------|
