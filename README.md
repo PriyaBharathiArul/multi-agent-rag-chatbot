@@ -35,27 +35,11 @@ The system is evaluated using a custom LLM-as-a-Judge that scores **behavioral c
 
 ### Results: 42% → 80% Accuracy Across 3 Iterations
 
-Each iteration used the failure analysis from the previous run to guide targeted fixes:
+Accuracy improved from 42% to 80% over 3 iterations, with each round using failure analysis from the LLM-as-a-Judge to guide targeted fixes.
 
-| Category | Iteration 1 | Iteration 2 | Iteration 3 (Final) |
-|----------|------------|------------|---------------------|
-| Obnoxious | 60% (6/10) | 70% (7/10) | **100% (10/10)** |
-| Irrelevant | 100% (10/10) | 100% (10/10) | **100% (10/10)** |
-| Relevant | 30% (3/10) | 50% (5/10) | **70% (7/10)** |
-| Small Talk | 0% (0/5) | 60% (3/5) | **100% (5/5)** |
-| Hybrid | 12.5% (1/8) | 50% (4/8) | **37.5% (3/8)** |
-| Multi-Turn | 14.3% (1/7) | 57.1% (4/7) | **71.4% (5/7)** |
-| **Overall** | **42% (21/50)** | **66% (33/50)** | **80% (40/50)** |
+![Evaluation Results](docs/evaluation_result.png)
 
-**Key fixes identified through failure analysis:**
-
-1. **Stricter safety classifier** (Iteration 1 → 2) — The obnoxious agent's prompt was too permissive, missing direct insults like "idiot" and "clown". Rewrote the classifier prompt to explicitly enumerate insult patterns, improving obnoxious detection from 60% to 100%.
-
-2. **Small-talk bypass** (Iteration 1 → 2) — Greetings like "Hello!" and "Thanks!" were being sent through the full RAG pipeline and refused as irrelevant. Added a small-talk bypass with exact-match and word-set detection before the pipeline runs.
-
-3. **Over-conservative grounding threshold** (Iteration 2 → 3) — The answering agent was refusing valid ML questions because retrieved chunks didn't contain exact keyword matches. Loosened the answering prompt to respond when excerpts contain *any* relevant information.
-
-4. **Refusal-text keyword leakage in hybrid responses** (Iteration 2 → 3) — The bot was embedding `REFUSE:` text inline when declining the non-ML part of a hybrid prompt, which the judge flagged as forbidden content. Implemented a hybrid prompt splitter that strips non-ML parts *before* they reach the answering agent.
+For the full iteration-by-iteration breakdown and fix analysis, see the [Evaluation Report](docs/evaluation_report.md).
 
 ## Project Structure
 
