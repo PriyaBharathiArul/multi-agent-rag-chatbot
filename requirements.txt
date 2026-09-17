@@ -1,5 +1,6 @@
 streamlit
 openai
+python-dotenv
 pinecone
 langchain-openai
 langchain-pinecone

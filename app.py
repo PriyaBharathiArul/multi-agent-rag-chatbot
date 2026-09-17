@@ -1,8 +1,12 @@
 import os
+from pathlib import Path
 
+from dotenv import load_dotenv
 import streamlit as st
 
 from agents import Head_Agent
+
+load_dotenv(Path(__file__).parent / ".env")
 
 
 def init_agent_once():
