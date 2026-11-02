@@ -1,4 +1,4 @@
 PINECONE_INDEX_NAME = "mp2-machine-learning-pdf"
 PINECONE_NAMESPACE = "ns500"
-OPENAI_MODEL = "gpt-4.1-nano"
+OPENAI_MODEL = "gpt-4o-mini"
 REFUSAL_PREFIX = "REFUSE:"
