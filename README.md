@@ -2,6 +2,13 @@
 
 A multi-agent Retrieval-Augmented Generation (RAG) chatbot that answers questions about a Machine Learning textbook. Built with a 5-agent architecture and evaluated using an LLM-as-a-Judge harness across 50 test cases and 6 behavioral categories.
 
+## Live Demo
+
+- **Streamlit Cloud:** [priyabharathiarul-multi-agent-rag-chatbot.streamlit.app](https://priyabharathiarul-multi-agent-rag-chatbot.streamlit.app/)
+- **Render (Docker):** [multi-agent-rag-chatbot-0jvn.onrender.com](https://multi-agent-rag-chatbot-0jvn.onrender.com/)
+
+![Chatbot Demo](docs/chatbot_demo.png)
+
 ## Architecture
 
 ![Multi-Agent RAG Pipeline](docs/architecture.png)
@@ -11,10 +18,10 @@ A multi-agent Retrieval-Augmented Generation (RAG) chatbot that answers question
 | Agent | Role | Model |
 |-------|------|-------|
 | **Head Agent** | Orchestrates the pipeline, routes queries through sub-agents | — |
-| **Obnoxious Agent** | Binary toxicity/harassment classifier | gpt-4.1-nano |
-| **Context Rewriter Agent** | Rewrites follow-up questions into standalone queries using conversation history | gpt-4.1-nano |
+| **Obnoxious Agent** | Binary toxicity/harassment classifier | gpt-4o-mini |
+| **Context Rewriter Agent** | Rewrites follow-up questions into standalone queries using conversation history | gpt-4o-mini |
 | **Query Agent** | Retrieves top-k relevant chunks from Pinecone (LangChain + OpenAI embeddings) | text-embedding-3-small |
-| **Answering Agent** | Generates grounded answers using only retrieved document excerpts | gpt-4.1-nano |
+| **Answering Agent** | Generates grounded answers using only retrieved document excerpts | gpt-4o-mini |
 
 ## Evaluation
 
@@ -121,10 +128,6 @@ python -m ingestion.index_pdf --pdf path/to/machine-learning.pdf --chunk-size 50
 ```bash
 streamlit run app.py
 ```
-## Demo
-
-![Chatbot Demo](docs/chatbot_demo.png)
-
 ### Run the Evaluation
 
 ```bash
@@ -133,7 +136,7 @@ python -m evaluation.evaluate
 
 ## Tech Stack
 
-- **LLM**: OpenAI GPT-4.1-nano
+- **LLM**: OpenAI GPT-4o-mini
 - **Embeddings**: OpenAI text-embedding-3-small
 - **Vector Store**: Pinecone (serverless)
 - **Orchestration**: Custom multi-agent Python classes
